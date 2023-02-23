@@ -10,24 +10,28 @@
     <section class="header">
         <h1>fingerpaint.io</h1>
     </section>
-    <p>Welcome</p>
 
-    <form action="/" method="post">
-        {% csrf_token %}
+    <div class="login">
+        <h2>Login</h2>
 
-        <table class="loginTable">
-            <tr>
-                <td>Username: </td>
-                <td><input type="text" name="username"></td>
-            </tr>
-            <tr>
-                <td>Password: </td>
-                <td><input type="text" name="password"></td>
-            </tr>
-        </table>
-        <button type="submit">LOGIN</button>
-    </form>
+        <form action="/" method="post">
+            {% csrf_token %}
 
-    {{ message }}
+            <table class="loginTable">
+                <tr>
+                    <td>Username: </td>
+                    <td><input type="text" name="username"></td>
+                </tr>
+                <tr>
+                    <td>Password: </td>
+                    <td><input type="text" name="password"></td>
+                </tr>
+            </table>
+            <div class="center">
+                <button class="btn btn-warning btn-lg loginbtn" type="submit">LOGIN</button>
+            </div>
+        </form>
+        {{ message }}
+    </div>
 </body>
 </html>

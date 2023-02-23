@@ -1,18 +1,72 @@
 .header {
-    width: 100%;
-    padding:60px 0;
+    padding:1px 0;
     text-align: center;
-    background: #33cccc;
+    font-size: 50px;
     color: white;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: black;
 }
 h1 {
     font-size: 2.8em;
     padding: 10px 0;
     font-weight: 800;
-    color: red;
+}
+
+h2 {
+	text-align: center;
 }
 
 body {
-  background-color: lightblue;
-  font-family: verdana;
+    background: url("../images/fingerpaint_background_1.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.login {
+    background: #FFF;
+    margin-top: auto;
+    padding-left: 50px;
+    padding-right: 20px;
+}
+
+.loginTable {
+    padding:50px;
+	margin-left: auto;
+  	margin-right: auto;
+	color: black;
+	font-size: 30px;
+    font-family: Arial, sans-serif;
+
+}
+
+tr,td{
+	padding:8px;
+}
+
+.loginbtn {
+	background-color: black;
+  	border-color: white;
+	color:white;
+	border-style: solid;
+	font-family: Arial, sans-serif;
+	text-align: center;
+	font-weight: bold;
+	font-size: 25px;
+	padding:20px;
+	width:180px;
+}
+
+.loginbtn:hover{
+	background-color: rgb(50,100,200);
+	color: white;
+	border-color:white;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
 }
