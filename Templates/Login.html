@@ -1,11 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/Style.css' %}"  type="text/css"/>
 </head>
 <body>
-    <p class="header">Welcome</p>
+    <section class="header">
+        <h1>fingerpaint.io</h1>
+    </section>
+    <p>Welcome</p>
 
     <form action="/" method="post">
         {% csrf_token %}
