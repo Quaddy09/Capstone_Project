@@ -4,32 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" href="{% static 'css/Style.css' %}"  type="text/css"/>
+    <link rel="stylesheet" href="{% static 'css/loginstyle.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css"/>
+    <link href="https://fonts.cdnfonts.com/css/8bit-wonder" rel="stylesheet">
 </head>
 <body>
-    <section class="header">
-        <h1>fingerpaint.io</h1>
-    </section>
+    <div class="container">
+        <div class="banner">
+            <div class="banner-text">
+                <style>@import url('https://fonts.cdnfonts.com/css/8bit-wonder');</style>
+                <h1>finger</h1>
+                <h1>paint</h1>
+            </div>
+        </div>
+
+    </div>
 
     <div class="box">
         <h2>Login</h2>
-
         <form action="/" method="post">
             {% csrf_token %}
 
-            <table class="loginTable">
-                <tr>
-                    <td>Username: </td>
-                    <td><input type="text" name="username"></td>
-                </tr>
-                <tr>
-                    <td>Password: </td>
-                    <td><input type="text" name="password"></td>
-                </tr>
-            </table>
-            <div class="center">
-                <button class="btn btn-warning btn-lg loginbtn" type="submit">LOGIN</button>
-            </div>
+            <p>Username</p>
+            <input type="text" name="username">
+            <p>Password</p>
+            <input type="text" name="password">
+
+            <button class="btn btn-warning btn-lg loginbtn" type="submit">sign in</button>
         </form>
         {{ message }}
     </div>

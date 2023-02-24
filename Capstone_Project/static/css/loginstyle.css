@@ -1,17 +1,3 @@
-.header {
-    padding:1px 0;
-    text-align: center;
-    font-size: 50px;
-    color: white;
-    -webkit-text-stroke-width: 4px;
-    -webkit-text-stroke-color: black;
-}
-h1 {
-    font-size: 2.8em;
-    padding: 10px 0;
-    font-weight: 800;
-}
-
 body {
     background: url("../images/fingerpaint_background_1.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -30,11 +16,15 @@ body {
     border-radius: 70px 70px 70px;
     background: rgb(255, 255, 255, 0.9);
 }
+
 .box h2 {
+    margin-top: 15px;
     margin-bottom: 0px;
     text-transform:uppercase;
     letter-spacing: 2px;
+    font-size: 50px;
 }
+
 input {
     width: 100%;
     height: 50px;
@@ -42,40 +32,36 @@ input {
     border: 2px solid black;
     margin-bottom: 15px;
     background: transparent;
-    color: #fff;
+    color: black;
+    font-size: 20px;
 }
 
-.loginTable {
-    padding:50px;
-	margin-left: auto;
-  	margin-right: auto;
-	color: black;
-	font-size: 30px;
-    font-family: Arial, sans-serif;
+.box p {
+    text-align: left;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
 }
 
 .loginbtn {
-	background-color: black;
-  	border-color: white;
-	color:white;
-	border-style: solid;
-	font-family: Arial, sans-serif;
-	text-align: center;
-	font-weight: bold;
-	font-size: 25px;
-	padding:20px;
-	width:180px;
+	display: block;
+    height: 40px;
+    width: 508px;
+    line-height: 40px;
+    text-align: center;
+    background: #6c757d;
+    border-radius: 25px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: 5px;
 }
 
 .loginbtn:hover{
 	background-color: rgb(50,100,200);
 	color: white;
 	border-color:white;
-}
-
-.center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70px;
 }
