@@ -1,15 +1,7 @@
-body {
-    background: url("../images/fingerpaint_background_1.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
 .box {
     width: 500px;
     height: 450px;
-    margin: 60px auto 0;
+    margin: 200px auto 0;
     text-align: center;
     padding: 35px;
     border: 3px solid #fff;
@@ -19,10 +11,11 @@ body {
 
 .box h2 {
     margin-top: 15px;
-    margin-bottom: 0px;
+    margin-bottom: 30px;
     text-transform:uppercase;
     letter-spacing: 2px;
     font-size: 50px;
+    font-family: '8BIT WONDER', sans-serif;
 }
 
 input {
@@ -42,11 +35,12 @@ input {
     font-weight: bold;
     font-size: 18px;
     text-transform: uppercase;
+    font-family: 'FreeMono', monospace;
 }
 
 .loginbtn {
 	display: block;
-    height: 40px;
+    height: 50px;
     width: 508px;
     line-height: 40px;
     text-align: center;
@@ -58,10 +52,11 @@ input {
     cursor: pointer;
     text-decoration: none;
     letter-spacing: 5px;
+    font-family: 'FreeMono', monospace;
 }
 
 .loginbtn:hover{
-	background-color: rgb(50,100,200);
+	background-color: mediumpurple;
 	color: white;
 	border-color:white;
 }

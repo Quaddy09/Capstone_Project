@@ -2,6 +2,15 @@
     margin:0;
     padding:0;
 }
+
+body {
+    background: url("../images/fingerpaint_background_1.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 .container {
     width: 100%;
     margin-top: -10px;
@@ -17,10 +26,18 @@
 
 .banner-text {
     padding-top: 50px;
-    margin-left: 50px;
+    margin-left: 170px;
     font-family: '8BIT WONDER', sans-serif;
     font-size: 40px;
 }
+
 .banner-text h1 {
 
+}
+.banner-text img {
+    float: left;
+    width: 150px;
+    height: 150px;
+    margin-left: 530px;
+    margin-top: -125px;
 }
