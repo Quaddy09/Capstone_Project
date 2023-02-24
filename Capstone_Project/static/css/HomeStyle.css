@@ -1,30 +1,21 @@
-.header {
-    width: 100%;
-    text-align: center;
-    background: #33cccc;
-    color: white;
-}
-.title {
-    font-size: 4.2em;
-    padding: 100px 0;
-    text-align: center;
-}
+@import url('https://fonts.cdnfonts.com/css/8bit-wonder');
 
-.container{  
-    text-align: center;  
+.buttons {
+    text-align: center;
     width: 100%;
     height: 100%;
     padding-top: 50px;
-}  
-
-body {
-  background-color: rgb(117, 201, 223);
-  font-family: verdana;
 }
 
 .home-btn {
-    background-color: blueviolet;
+    background-color: #6c757d;
     justify-content: center;
     align-items: center;
     width:200px;
+}
+
+.home-btn:hover {
+    background-color: mediumpurple;
+	color: white;
+	border-color:white;
 }

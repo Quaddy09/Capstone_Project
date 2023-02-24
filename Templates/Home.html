@@ -4,13 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
-    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}"  type="text/css"/>
     <link rel="stylesheet" href="{% static 'css/HomeStyle.css' %}"  type="text/css"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css"/>
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 </head>
+
 <body>
-    <div class = "container">
-        <p class ="title">FingerPaint.io</p>
+    <div class="container">
+        <div class="banner">
+            <div class="banner-text">
+                <h1>finger</h1>
+                <h1>painter</h1>
+                <img src="{% static 'images/logo_final_1.jpg' %}"/>
+            </div>
+        </div>
+    </div>
+
+    <div class = "buttons">
         <button class="btn home-btn btn-success">Create Lobby</button><br/><br/>
         <button class="btn home-btn btn-success">Join Lobby</button> <br/><br/>
         <button class="btn home-btn btn-success">How To Play</button> <br/><br/>
