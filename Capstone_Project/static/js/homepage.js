@@ -1,18 +1,24 @@
-let but = document.getElementById("try");
-let video = document.getElementById("vid");
-let mediaDevices = navigator.mediaDevices;
+document.addEventListener("DOMContentLoaded", () => {
+      var but = document.getElementById("try");
+      var video = document.getElementById("vid");
+      var mediaDevices = navigator.mediaDevices;
+      vid.muted = true;
+      but.addEventListener("click", () => {
 
-but.addEventListener("click", () => {
+        // Accessing the user camera and video.
+        mediaDevices
+          .getUserMedia({
+            video: true,
+            audio: true,
+          })
+          .then((stream) => {
 
-    mediaDevices.getUserMedia({
-        video: true,
-        audio: true,
-    })
-        .then((stream) => {
+            // Changing the source of video to current stream.
             video.srcObject = stream;
-            video.addEventListener("loadmetadata", () => {
-                video.play();
+            video.addEventListener("loadedmetadata", () => {
+              video.play();
             });
-        })
-        .catch(alert);
-});
+          })
+          .catch(alert);
+      });
+    });
