@@ -15,7 +15,7 @@ body {
 .container {
     width: 100%;
     margin-top: -10px;
-    position: relative;
+    position: static;
 }
 
 .banner {
@@ -28,15 +28,19 @@ body {
 
 .banner-text {
     padding-top: 50px;
-    margin-left: 550px;
     font-family: '8BIT WONDER', sans-serif;
     font-size: 40px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.h1 {
+    padding: 10px;
 }
 
 .banner-text img {
-    float: left;
     width: 150px;
     height: 150px;
-    margin-left: -170px;
-    margin-top: -150px;
 }

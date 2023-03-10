@@ -6,7 +6,7 @@
     <title>Home</title>
     <link rel="stylesheet" href="{% static 'css/HomeStyle.css' %}"  type="text/css"/>
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css"/>
-    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+	<script src=" {% static '/js/homepage.js' %} "></script>
 </head>
 
 <body>
@@ -20,11 +20,21 @@
         </div>
     </div>
 
-    <div class = "buttons">
-        <button class="btn home-btn btn-success">Create Lobby</button><br/><br/>
-        <button class="btn home-btn btn-success">Join Lobby</button> <br/><br/>
-        <button class="btn home-btn btn-success">How To Play</button> <br/><br/>
-        <button class="btn home-btn btn-success">Settings</button>
+    <div class = "btn">
+        <button type="button" class="btn btn-primary btn-lg">Create Lobby</button>
+        <button type="button" class="btn btn-primary btn-lg">Join Lobby</button>
     </div>
+
+    <div class="howto">
+        <div class="text-back"><h2>How-to-Play</h2></div>
+    </div>
+
+    <button id="try" type=button" class="try" autoplay>Try It Out</button>
+    <div class="webcam">
+        <video id="vid"></video>
+    </div>
+
+
+
 </body>
 </html>
