@@ -6,14 +6,16 @@
     <title>Login</title>
     <link rel="stylesheet" href="{% static 'css/loginstyle.css' %}" type="text/css"/>
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css"/>
+    <link href="https://fonts.cdnfonts.com/css/8bit-wonder" rel="stylesheet">
 </head>
-
 <body>
+    <style>@import url('https://fonts.cdnfonts.com/css/8bit-wonder');</style>
     <div class="container">
         <div class="banner">
             <div class="banner-text">
+                <h1>finger</h1>
+                <h1>painter</h1>
                 <img src="{% static 'images/logo_final_1.jpg' %}"/>
-                <h1>finger<br>painter</h1>
             </div>
         </div>
     </div>
@@ -28,7 +30,8 @@
             <p>Password</p>
             <input type="password" name="password">
 
-            <button class="btn btn-warning btn-lg loginbtn" type="submit">sign in</button>
+            <input class="btn btn-warning btn-lg loginbtn" type="submit" name="signin" value = "Sign In">
+            <input class="btn btn-warning btn-lg signupbtn" type="submit" name="signup" value = "Sign Up">
         </form>
         {{ message }}
     </div>

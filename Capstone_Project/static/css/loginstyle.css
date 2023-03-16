@@ -1,4 +1,3 @@
-@import url('https://fonts.cdnfonts.com/css/8bit-wonder');
 .box {
     width: 500px;
     height: 450px;
@@ -12,13 +11,11 @@
 
 .box h2 {
     margin-top: 15px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     text-transform:uppercase;
     letter-spacing: 2px;
     font-size: 50px;
     font-family: '8BIT WONDER', sans-serif;
-    padding-bottom: 20px;
-    border-bottom: 1px solid black
 }
 
 input {
@@ -30,7 +27,6 @@ input {
     background: transparent;
     color: black;
     font-size: 20px;
-    padding-left: 10px;
 }
 
 .box p {
@@ -60,6 +56,30 @@ input {
 }
 
 .loginbtn:hover{
+	background-color: mediumpurple;
+	color: white;
+	border-color:white;
+}
+
+
+.signupbtn {
+	display: block;
+    height: 50px;
+    width: 508px;
+    line-height: 40px;
+    text-align: center;
+    background: #3b83c2;
+    border-radius: 25px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: 5px;
+    font-family: 'FreeMono', monospace;
+}
+
+.signupbtn:hover{
 	background-color: mediumpurple;
 	color: white;
 	border-color:white;
