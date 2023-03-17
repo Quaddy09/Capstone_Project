@@ -3,9 +3,10 @@ from fingerpaint.models import User
 
 def create_user(username, userpwd):
     if exists(username):
-        return False #already existing username
+        return False  #already existing username
     User.objects.create ( username = username, password = userpwd, email = username)
-    return True #successfully created user
+    return True  #successfully created user
+
 
 def get_user(username):
     return User.objects.get(username=username)
@@ -56,8 +57,9 @@ def set_password(user, new_password):
     elif len(new_password) > 25:
         raise Exception("Password is too long")
     else:
-        user.password = new_password
-        user.save()
+        username = User.objects.get(username=user)
+        username.password = new_password
+        username.save()
 
 
 def get_email(user):

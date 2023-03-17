@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views import View
-#from .models import *
+from .models import User
 from classes import myUser
 
 
@@ -32,7 +32,19 @@ class Login(View):
                 message = 'Successfully created the user.'
             else:
                 message = 'Failed to create user owing to double username.'
-            return render ( request, "Login.html", {"message":message})
+            return render(request, "Login.html", {"message": message})
+
+
+class PasswordChange(View):
+    def get(self, request):
+        return render(request, "PasswordChange.html", {})
+
+    def post(self, request):
+        username = request.POST['username']
+        new_pass = request.POST['password']
+        myUser.set_password(username, new_pass)
+
+        return render(request, "Login.html", {})
 
 
 class Homepage(View):
