@@ -13,7 +13,7 @@ class Login(View):
         attempted_password = request.POST['password']
 
         message = ''
-        print ( request.POST)
+        print(request.POST)
 
         if 'signin' in request.POST:
             if not myUser.exists(attempted_username):
@@ -28,7 +28,7 @@ class Login(View):
                 request.session.set_expiry(0)
                 return redirect("/home/")
         else:
-            if myUser.create_user ( attempted_username, attempted_password):
+            if myUser.create_user(attempted_username, attempted_password):
                 message = 'Successfully created the user.'
             else:
                 message = 'Failed to create user owing to double username.'
@@ -43,3 +43,13 @@ class Homepage(View):
     #def post(self, request):
     #    my_user = myUser.get_user(request.session["session_username"])
     #    return render(request, "?????.html", {})
+
+
+class Lobby(View):
+    def get(self, request):
+        return render(request, "Lobby.html", {})
+
+
+class Game(View):
+    def get(self, request):
+        return render(request, "Game.html", {})

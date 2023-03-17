@@ -7,20 +7,40 @@
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}"  type="text/css"/>
     <link rel="stylesheet" href="{% static 'css/HomeStyle.css' %}"  type="text/css"/>
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static '/js/homepage.js' %}"></script>
 </head>
 
 <body>
+<article class="index-intro">
+    <div class="banner">
+        <div class="jumbotron">
+            <img class="logo" src="{% static 'images/logo_final_1.jpg' %}"/>
+            <h1 class="name">Fingerpainter</h1>
+        </div>
+
+    </div>
+</article>
+
+
     <div class = "container">
         <div></div>
-        <p class ="title">FingerPaint.io</p>
-        <button class="btn home-btn btn-success" >Create Lobby</button><br/><br/>
-        <button class="btn home-btn btn-success">Join Lobby</button> <br/><br/>
-        <button class="btn home-btn btn-success" onclick="onClickPlayGame()">How To Play</button> <br/><br/>
-        <button class="btn home-btn btn-success" onclick="onClickSetting()">Settings</button>
+        <button class="btn home-btn btn-success" onclick="location.href = '/lobby'">Create Lobby</button><br/><br/>
+        <button class="btn home-btn btn-success" >Join Lobby</button> <br/><br/>
+        <!--<button class="btn home-btn btn-success" onclick="onClickPlayGame()">How To Play</button> <br/><br/>
+        <button class="btn home-btn btn-success" onclick="onClickSetting()">Settings</button> -->
+
+
+        <div class="howto">
+            <div class="text-back"><h2>How-to-Play</h2></div>
+        </div>
+
+        <button class="btn test btn-success" onclick="onClickVideo()">Test It Out</button>
+        <br />
     </div>
+    <!--
     <div id="playModal" class="modal">
         <div class="modal-content">
-          <span class="close" onclick="onClickPlayModal()">&times;</span>
+          <span class="close" onclick="onClickVideoModal()">&times;</span>
           <h2 style = "text-align: center;">How to play the Game</h2>
           <span>
             Users can type in chat, which is visible to everyone, to guess what is being drawn
@@ -33,40 +53,25 @@
           </span>
         </div>
     </div>
-
-    <div id="settingModal" class="modal">
+    -->
+    <div id="videoModal" class="modal">
         <div class="modal-content">
-          <span class="close" onclick="onClickSettingModal()">&times;</span>
-          <h2 style = "text-align: center;">Setting</h2>
-          <button class="btn home-btn btn-success" style = "margin:auto; width:80%">
-            Test Web Cam
-          </button><br>
-          <button  class="btn home-btn btn-success" style = "margin:auto; width:80%">
-            Later Feature 1
-          </button><br>
-          <button  class="btn home-btn btn-success" style = "margin:auto; width:80%">
-            Later Feature 2
-          </button>          
+          <span class="close" onclick="onClickVideoModal()">&times;</span>
+          <div class = "webcam">
+              <video id="vid"></video>
+          </div>
         </div>
     </div>    
 
 </body>
 <script>
-    function onClickPlayGame() {
-        var modal = document.getElementById("playModal");
+    function onClickVideo() {
+        var modal = document.getElementById("videoModal");
         modal.style.display = "block";
     }
-    function onClickPlayModal() {
-        var modal = document.getElementById("playModal");
+    function onClickVideoModal() {
+        var modal = document.getElementById("videoModal");
         modal.style.display = "none";
-    }    
-    function onClickSetting() {
-        var modal = document.getElementById("settingModal");
-        modal.style.display = "block";
     }
-    function onClickSettingModal() {
-        var modal = document.getElementById("settingModal");
-        modal.style.display = "none";
-    }        
 </script>
 </html>
