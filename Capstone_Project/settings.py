@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'fingerpaint.apps.FingerpaintConfig'
+    'fingerpaint.apps.FingerpaintConfig',
+    'channels'
 ]
 
 MIDDLEWARE = [
@@ -70,6 +71,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'Capstone_Project.wsgi.application'
+ASGI_APPLICATION = 'Capstone_Project.asgi.application'
+
 
 
 # Database
