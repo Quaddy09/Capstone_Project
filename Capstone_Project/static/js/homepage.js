@@ -1,3 +1,5 @@
+
+
 document.addEventListener("DOMContentLoaded", () => {
       var but = document.getElementById("try");
       var video = document.getElementById("vid");
@@ -22,6 +24,32 @@ document.addEventListener("DOMContentLoaded", () => {
           .catch(alert);
       });
 });
+
+function getInRoom() {
+    if (!/^[a-zA-Z0-9-_]+$/.test(room_name.value)){
+            alert("Error. Please use  underscore and alphanumeric only ! ");
+        }
+    else {
+        window.location.href = window.location.href+room_name.value
+    }
+}
+
+let create_room = document.getElementById("create_room");
+let room_name = document.getElementById('room_name');
+create_room.addEventListener('click',async function(){
+    try {
+        const check_url = window.location.host
+        const res = await fetch(`${check_url}/room/check_room/${room_name.value}/`,{
+            method:'GET',
+
+        })
+        const r = await res.json()
+        getInRoom()
+    } catch (error) {
+        console.log(error)
+    }
+})
+
 function onClickVideo() {
     var modal = document.getElementById("videoModal");
     modal.style.display = "block";
