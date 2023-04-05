@@ -57,11 +57,6 @@ class Homepage(View):
     #    return render(request, "?????.html", {})
 
 
-class Lobby(View):
-    def get(self, request):
-        return render(request, "Lobby.html", {})
-
-
 class Game(View):
     def get(self, request):
         return render(request, "Game.html", {})
