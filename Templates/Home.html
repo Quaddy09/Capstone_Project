@@ -11,7 +11,8 @@
 </head>
 
 <body>
-<article class="index-intro">
+
+    <article class="index-intro">
     <div class="banner">
         <div class="jumbotron">
             <img class="logo" src="{% static 'images/logo_final_1.jpg' %}"/>
@@ -19,19 +20,17 @@
         </div>
 
     </div>
-</article>
-
+    </article>
 
     <div class = "container">
         <div>
-            <input type="text" id="room-name">
+            <input type="text" id="room-name" placeholder="Enter Room Name...">
         </div>
-
-        <button class="btn home-btn btn-success" id="create_room">Create Room</button><br/><br/>
-        <button class="btn home-btn btn-success" >Join Room</button> <br/><br/>
-        <!--<button class="btn home-btn btn-success" onclick="onClickPlayGame()">How To Play</button> <br/><br/>
-        <button class="btn home-btn btn-success" onclick="onClickSetting()">Settings</button> -->
-
+        <br/>
+        <button class="btn home-btn btn-success" id="create_room">Create Room</button>
+        <br/><br/>
+        <button class="btn home-btn btn-success" id="join_room">Join Room</button>
+        <br/><br/>
 
         <div class="howto">
             <div class="text-back"><h2>How-to-Play</h2></div>

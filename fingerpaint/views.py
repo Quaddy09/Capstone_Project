@@ -52,10 +52,6 @@ class Homepage(View):
         my_user = myUser.get_user(request.session["session_username"])
         return render(request, "Home.html", {})
 
-    #def post(self, request):
-    #    my_user = myUser.get_user(request.session["session_username"])
-    #    return render(request, "?????.html", {})
-
 
 class Game(View):
     def get(self, request):
