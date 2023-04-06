@@ -116,3 +116,10 @@ h2 {
     text-decoration: none;
     cursor: pointer;
 }
+
+.text-back{
+    text-align: left;
+    margin:10px;
+    font-size: 20px;
+    color:rgb(16, 11, 88)
+}
