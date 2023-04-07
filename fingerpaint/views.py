@@ -6,33 +6,23 @@ from classes import myUser
 
 class Login(View):
     def get(self, request):
-        return render(request, "Login.html", {})
+        return render(request, "Login.html")
 
     def post(self, request):
         attempted_username = request.POST['username']
         attempted_password = request.POST['password']
 
-        message = ''
-        # print(request.POST)
-
-        if 'signin' in request.POST:
-            if not myUser.exists(attempted_username):
-                return render(request, "Login.html", {"message": "Incorrect username"})
-            else:
-                my_user = myUser.get_user(attempted_username)
-                my_password = myUser.get_password(my_user)
-            if not myUser.password_check(attempted_password, my_password):
-                return render(request, "Login.html", {"message": "Incorrect password"})
-            else:
-                request.session["session_username"] = attempted_username
-                request.session.set_expiry(0)
-                return redirect("/home/")
+        if not myUser.exists(attempted_username):
+            return render(request, "Login.html", {"message": "Incorrect username"})
         else:
-            if myUser.create_user(attempted_username, attempted_password):
-                message = 'Successfully created the user.'
-            else:
-                message = 'Failed to create user owing to double username.'
-            return render(request, "Login.html", {"message": message})
+            my_user = myUser.get_user(attempted_username)
+            my_password = myUser.get_password(my_user)
+        if not myUser.password_check(attempted_password, my_password):
+            return render(request, "Login.html", {"message": "Incorrect password"})
+        else:
+            request.session["session_username"] = attempted_username
+            request.session.set_expiry(0)
+            return redirect("/home/")
 
 
 class PasswordChange(View):
@@ -42,9 +32,28 @@ class PasswordChange(View):
     def post(self, request):
         username = request.POST['username']
         new_pass = request.POST['password']
+        if new_pass is "" or None:
+            return render(request, 'PasswordChange.html', {'message': 'Password cannot be empty'})
         myUser.set_password(username, new_pass)
+        return redirect("/")
 
-        return render(request, "Login.html", {})
+
+class CreateUser(View):
+    def get(self, request):
+        return render(request, "CreateUser.html")
+
+    def post(self, request):
+        username = request.POST['username']
+        password = request.POST['password']
+        if myUser.exists(username):
+            return render(request, "CreateUser.html", {"message": "That username already exists"})
+        elif password is "" or None:
+            return render(request, "CreateUser.html", {"message": "Password cannot be empty"})
+        else:
+            if myUser.create_user(username, password):
+                return redirect("/")
+            else:
+                return render(request, "CreateUser.html", {"message": "Something went wrong"})
 
 
 class Homepage(View):

@@ -1,16 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+</head>
+<body>
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Change Password</title>
+    <title>Title</title>
     <link rel="stylesheet" href="{% static 'css/PwdChangestyle.css' %}" type="text/css"/>
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css"/>
-    <link href="https://fonts.cdnfonts.com/css/8bit-wonder" rel="stylesheet">    
+    <link href="https://fonts.cdnfonts.com/css/8bit-wonder" rel="stylesheet">
 </head>
 <body>
     <div class="box">
-        <h2>Change Password</h2>
+        <h2>Sign Up</h2>
         <form action="" method="post">
             {% csrf_token %}
 
@@ -19,9 +26,12 @@
             <p>Password</p>
             <input type="password" name="password">
 
-            <input class="btn btn-warning btn-lg changebtn" type="submit" name="signin" value = "Change Password">
+            <input class="btn btn-warning btn-lg changebtn" type="submit" name="signin" value = "Create Account">
         </form>
-        <input class="btn btn-warning btn-lg returnbtn" type="submit" name="login" value = "Return Back" onclick="window.location.href = '/'">
+        <input class="btn btn-warning btn-lg returnbtn" type="submit" name="login" value = "Return Back" onclick="location.href = '/'">
+        {{ message }}
     </div>
+</body>
+</html>
 </body>
 </html>

@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from fingerpaint.views import Login, Homepage, Game, PasswordChange
+# from fingerpaint.views import Login, Homepage, Game, PasswordChange
+from fingerpaint import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', Login.as_view()),
-    path('password/', PasswordChange.as_view()),
-    path('home/', Homepage.as_view()),
-    path('home/<str:room_name>/', Game, name="game")
+    path('', views.Login.as_view()),
+    path('password/', views.PasswordChange.as_view()),
+    path('createuser/', views.CreateUser.as_view()),
+    path('home/', views.Homepage.as_view()),
+    path('home/<str:room_name>/', views.Game, name="game")
 ]

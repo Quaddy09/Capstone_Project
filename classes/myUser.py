@@ -4,7 +4,7 @@ from fingerpaint.models import User
 def create_user(username, userpwd):
     if exists(username):
         return False  #already existing username
-    User.objects.create ( username = username, password = userpwd, email = username)
+    User.objects.create ( username=username, password=userpwd, email = username)
     return True  #successfully created user
 
 
