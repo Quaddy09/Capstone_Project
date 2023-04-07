@@ -1,0 +1,60 @@
+.name{
+        margin-bottom: 0;
+}
+.index-intro .jumbotron {
+    padding: 0;
+}
+.game{
+    height: 400px;
+    display:flex;
+}
+
+.playerList{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.playerList ul{
+    background-color: white;
+    display: inline-block;
+    padding: 0;
+    border: solid black 1px;
+    border-radius: 4px;
+    list-style: none;
+}
+
+.playerList ul li {
+    border-bottom: solid black 1px;
+    padding: 10px;
+}
+.gameArea{
+    flex-grow: 1;
+}
+.gameDisplay{
+    background: lightgray;
+    border: black solid 1px;
+    border-radius: 4px;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+}
+.guessArea, .sendChatArea{
+    display: flex;
+}
+.guess, .send{
+    flex-grow: 1;
+}
+.chat{
+    background: white;
+    border: black solid 1px;
+    border-radius: 4px;
+    height: 100%;
+    width: 100%;
+}
+.chatHeader{
+    text-align: center;
+    font-size: 30px;
+    border-bottom: black solid 1px;
+}
