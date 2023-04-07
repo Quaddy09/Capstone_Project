@@ -13,7 +13,7 @@ class Login(View):
         attempted_password = request.POST['password']
 
         message = ''
-        print(request.POST)
+        # print(request.POST)
 
         if 'signin' in request.POST:
             if not myUser.exists(attempted_username):
@@ -53,6 +53,5 @@ class Homepage(View):
         return render(request, "Home.html", {})
 
 
-class Game(View):
-    def get(self, request):
-        return render(request, "Game.html", {})
+def Game(request, room_name):
+    return render(request, 'Game.html')

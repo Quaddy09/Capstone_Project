@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}"  type="text/css"/>
     <link rel="stylesheet" href="{% static 'css/HomeStyle.css' %}"  type="text/css"/>
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-    <script src="{% static '/js/homepage.js' %}"></script>
 </head>
 
 <body>
@@ -56,7 +55,7 @@
             </div>
         </div>
 
-        <button class="btn test btn-success" onclick="onClickVideo()">Test It Out</button>
+        <button class="btn test btn-success">Test It Out</button>
         <br />
     </div>
     <!--
@@ -86,6 +85,7 @@
     </div>    
 
 </body>
+<!--
 <script>
     function onClickVideo() {
         var modal = document.getElementById("videoModal");
@@ -96,4 +96,6 @@
         modal.style.display = "none";
     }
 </script>
+-->
+<script src="{% static '/js/homepage.js' %}"></script>
 </html>

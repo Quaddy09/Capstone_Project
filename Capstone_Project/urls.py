@@ -22,5 +22,5 @@ urlpatterns = [
     path('', Login.as_view()),
     path('password/', PasswordChange.as_view()),
     path('home/', Homepage.as_view()),
-    path('<str:room_name>/', Game.as_view, name="game")
+    path('home/<str:room_name>/', Game, name="game")
 ]

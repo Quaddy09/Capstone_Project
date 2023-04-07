@@ -6,8 +6,9 @@ class Lobby(models.Model):
 
     def __str__(self) -> str:
         return self.lobby_name
+# lobby = models.ForeignKey(Lobby.lobby_name, on_delete=models.CASCADE)
 
-#lobby = models.ForeignKey(Lobby.lobby_name, on_delete=models.CASCADE)
+
 class User(models.Model):
     username = models.CharField(max_length=25)
     password = models.CharField(max_length=25)

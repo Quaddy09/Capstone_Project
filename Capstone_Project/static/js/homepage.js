@@ -1,6 +1,6 @@
-let room_name = document.getElementById('room_name');
-let create_room_btn = document.getElementById("create_room");
-let join_room_btn = document.getElementById("join_room")
+const room_name = document.getElementById('room-name');
+const create_room_btn = document.getElementById("create_room");
+const join_room_btn = document.getElementById("join_room");
 
 /* Checks that Room text box value is valid
 *  If it is -> Redirects user to that "room" within game page */
@@ -9,7 +9,7 @@ function getInRoom() {
             alert("Error. Please use  underscore and alphanumeric only ! ");
         }
     else {
-        window.location.href = window.location.href+ "" +room_name.value
+        window.location.href = window.location.href+ "" +room_name.value;
     }
 }
 
@@ -17,24 +17,28 @@ function getInRoom() {
 *  Checks to make sure room name isn't already used
 *  calls function getInRoom() */
 create_room_btn.addEventListener('click',async function(){
+    console.log("click create");
     try {
-        const check_url = window.location.host
+        getInRoom();
+        /*
+        const check_url = window.location.host;
         const res = await fetch(`${check_url}/room/check_room/${room_name.value}/`,{
             method:'GET',
         })
-        const r = await res.json()
+        const r = await res.json();
         //if(r.room_exist){
         //    Swal.fire("Room Name Taken", "Please choose other or join this room ! ", "error");
         //}
         //else{
-        getInRoom()
+
         //}
+        */
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 })
 /* Adds click listener to join_room button*/
-join_room_btn.addEventListener('click',getInRoom)
+join_room_btn.addEventListener('click',getInRoom);
 
 /*
 document.addEventListener("DOMContentLoaded", () => {
