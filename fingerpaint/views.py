@@ -32,7 +32,7 @@ class PasswordChange(View):
     def post(self, request):
         username = request.POST['username']
         new_pass = request.POST['password']
-        if new_pass is "" or None:
+        if new_pass == "" or None:
             return render(request, 'PasswordChange.html', {'message': 'Password cannot be empty'})
         myUser.set_password(username, new_pass)
         return redirect("/")
@@ -47,7 +47,7 @@ class CreateUser(View):
         password = request.POST['password']
         if myUser.exists(username):
             return render(request, "CreateUser.html", {"message": "That username already exists"})
-        elif password is "" or None:
+        elif password == "" or None:
             return render(request, "CreateUser.html", {"message": "Password cannot be empty"})
         else:
             if myUser.create_user(username, password):
@@ -63,4 +63,6 @@ class Homepage(View):
 
 
 def Game(request, room_name):
-    return render(request, 'Game.html')
+    my_user = myUser.get_user(request.session["session_username"])
+    print(my_user.username)
+    return render(request, 'Game.html', {'data': my_user})
