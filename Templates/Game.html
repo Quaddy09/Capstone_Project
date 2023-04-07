@@ -1,12 +1,53 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Game</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}"  type="text/css"/>
+    <link rel="stylesheet" href="{% static 'css/HomeStyle.css' %}"  type="text/css"/>
+    <link rel="stylesheet" href="{% static 'css/GameStyle.css' %}" type="text/css"/>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 </head>
 <body>
-<p>Hello</p>
-{{ data }}
+    <article class="index-intro">
+    <div class="banner">
+        <div class="jumbotron">
+            <img class="logo" src="{% static 'images/logo_final_1.jpg' %}"/>
+            <h1 class="name">Fingerpainter</h1>
+        </div>
+
+    </div>
+    </article>
+
+
+    <div class="game">
+        <div class="playerList">
+        <ul>
+            <li>Player 1</li>
+            <li>Player 2</li>
+            <li>Player 3</li>
+            <li>Player 4</li>
+        </ul>
+    </div>
+    <div class="gameArea">
+    <div class="gameDisplay">
+        Camera feed will be shown here.
+        {{ data }}
+    </div>
+        <div class="guessArea">
+            <input class="guess"> <button>Guess</button></input>
+        </div>
+    </div>
+          <div class="chatArea">
+        <div class="chat">
+            <div class="chatHeader">Chat</div>
+        </div>
+              <div class="sendChatArea">
+         <input class="send"> <button>Send</button></input>
+                  </div>
+    </div>
+    </div>
 
 </body>
 </html>
