@@ -24,6 +24,7 @@
     <div class="game">
         <div class="playerList">
         <ul>
+            <h3> {{ room_name }}</h3>
             <li>Player 1</li>
             <li>Player 2</li>
             <li>Player 3</li>
@@ -33,7 +34,6 @@
     <div class="gameArea">
     <div class="gameDisplay">
         Camera feed will be shown here.
-        {{ data }}
     </div>
         <div class="guessArea">
             <input class="guess"> <button>Guess</button></input>
@@ -48,6 +48,6 @@
                   </div>
     </div>
     </div>
-
+    <script src="{% static '/js/game.js' %}" data-room-name="{{ room_name }}"></script>
 </body>
 </html>

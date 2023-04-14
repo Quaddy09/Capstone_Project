@@ -15,8 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-# from fingerpaint.views import Login, Homepage, Game, PasswordChange
-from fingerpaint import views
+from fingerpaint import views, routing, consumers
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,5 +23,9 @@ urlpatterns = [
     path('password/', views.PasswordChange.as_view()),
     path('createuser/', views.CreateUser.as_view()),
     path('home/', views.Homepage.as_view()),
-    path('home/<str:room_name>/', views.Game, name="game")
+    path('ws/home/<str:room_name>/', views.Game, name="game")
+]
+
+routing.websocket_urlpatterns = [
+    path('ws://127.0.0.1:8000/ws/home/<str:room_name>', consumers.GameConsumer.as_asgi())
 ]

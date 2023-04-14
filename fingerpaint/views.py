@@ -63,5 +63,5 @@ class Homepage(View):
 
 
 def Game(request, room_name):
-    my_user = myUser.get_user(request.session["session_username"])
-    return render(request, 'Game.html', {'data': my_user})
+    # my_user = myUser.get_user(request.session["session_username"])
+    return render(request, 'Game.html', {'room_name': room_name})

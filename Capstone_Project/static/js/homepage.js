@@ -9,7 +9,10 @@ function getInRoom() {
             alert("Error. Please use  underscore and alphanumeric only ! ");
         }
     else {
-        window.location.href = window.location.href+ "" +room_name.value;
+        alert('made it')
+        var test = window.location.host+ "/ws/home/" +room_name.value +'/';
+        console.log(test);
+        //window.location.href = window.location.host+ "/ws/home/" +room_name.value +'/';
     }
 }
 
