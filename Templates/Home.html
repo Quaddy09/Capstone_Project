@@ -55,7 +55,7 @@
             </div>
         </div>
 
-        <button class="btn test btn-success">Test It Out</button>
+        <button class="btn test btn-success" onclick="onClickVideo()">Test It Out</button>
         <br />
     </div>
     <!--
@@ -78,8 +78,11 @@
     <div id="videoModal" class="modal">
         <div class="modal-content">
           <span class="close" onclick="onClickVideoModal()">&times;</span>
+          <p>
+            Web Camera Test
+          </p>
           <div class = "webcam">
-              <video id="vid"></video>
+            <img id = "vid" src="{% url 'video_feed' %}" width="100%">
           </div>
         </div>
     </div>    

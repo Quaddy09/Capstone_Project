@@ -65,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
           .catch(alert);
       });
 });
+*/
 
 function onClickVideo() {
     var modal = document.getElementById("videoModal");
@@ -74,4 +75,3 @@ function onClickVideoModal() {
     var modal = document.getElementById("videoModal");
     modal.style.display = "none";
 }
-*/
