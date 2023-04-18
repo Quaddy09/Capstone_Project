@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'channels'
 ]
 
+CHANNEL_LAYER = 'channels.layers.DefaultBackend'  # Set the backend for Django Channels
+CHANNEL_BACKEND = 'asgiref.inmemory.ChannelLayer'  # Set the channel layer backend
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
