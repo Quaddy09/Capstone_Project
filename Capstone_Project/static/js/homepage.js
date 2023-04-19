@@ -9,11 +9,8 @@ function getInRoom() {
             alert("Error. Please use  underscore and alphanumeric only ! ");
         }
     else {
-        //console.log(window.location.href);
-        window.location.href = window.location.href+ "" +room_name.value;
-        //window.location.href = 'ws://' + window.location.host + '/home/'+ room_name.value + '/'
-        var test = window.location.host+ "/ws/home/" +room_name.value +'/';
-        console.log(test);
+        // window.location.href = window.location.href+ "" +room_name.value;
+        window.location.pathname = '/home/' + roomName + '/';
     }
 }
 
@@ -21,7 +18,6 @@ function getInRoom() {
 *  Checks to make sure room name isn't already used
 *  calls function getInRoom() */
 create_room_btn.addEventListener('click',async function(){
-    console.log("click create");
     try {
         getInRoom();
         /*
@@ -43,33 +39,6 @@ create_room_btn.addEventListener('click',async function(){
 })
 /* Adds click listener to join_room button */
 join_room_btn.addEventListener('click',getInRoom);
-
-/*
-document.addEventListener("DOMContentLoaded", () => {
-      var but = document.getElementById("try");
-      var video = document.getElementById("vid");
-      var mediaDevices = navigator.mediaDevices;
-      vid.muted = true;
-      but.addEventListener("click", () => {
-
-        // Accessing the user camera and video.
-        mediaDevices
-          .getUserMedia({
-            video: true,
-            audio: true,
-          })
-          .then((stream) => {
-
-            // Changing the source of video to current stream.
-            video.srcObject = stream;
-            video.addEventListener("loadedmetadata", () => {
-              video.play();
-            });
-          })
-          .catch(alert);
-      });
-});
-*/
 
 function onClickVideo() {
     var modal = document.getElementById("videoModal");

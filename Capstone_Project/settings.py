@@ -31,8 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    # 'fingerpaint.apps.FingerpaintConfig',
-    'fingerpaint',
+    'fingerpaint.apps.FingerpaintConfig',
     'channels',
     'daphne',
     'django.contrib.admin',

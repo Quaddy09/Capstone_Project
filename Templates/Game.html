@@ -49,6 +49,24 @@
                   </div>
     </div>
     </div>
+    {{ room_name|json_script:"room-name" }}
+    <script>
+        const roomName = JSON.parse(document.getElementById('room-name').textContent)
+        /*const socket = new WebSocket(
+            'ws://' +
+            window.location.host +
+            '/ws/home/' +
+            roomName +
+            '/'
+        );
+        console.log('successfully connected?');
+        socket.onmessage = function (e) {
+            const data = JSON.parse(e.data);
+            console.log(data);
+            document.querySelector('#user-hello').innerHTML = (data.message)
+        }
+        */
+    </script>
     <script src="{% static '/js/game.js' %}" data-room-name="{{ room_name }}"></script>
 </body>
 </html>

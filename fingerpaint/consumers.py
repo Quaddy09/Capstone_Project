@@ -6,7 +6,7 @@ from .models import Lobby
 from classes import myUser
 
 
-class GameConsumer(AsyncWebsocketConsumer):
+class GameConsumer(WebsocketConsumer):
     def connect(self):
         self.accept()
 
