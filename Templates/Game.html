@@ -16,7 +16,6 @@
             <img class="logo" src="{% static 'images/logo_final_1.jpg' %}"/>
             <h1 class="name">Fingerpainter</h1>
         </div>
-
     </div>
     </article>
 
@@ -24,7 +23,7 @@
     <div class="game">
         <div class="playerList">
         <ul>
-            <h3> {{ room_name }}</h3>
+            <h3 id="name"> {{ room_name }}</h3>
             <li>Player 1</li>
             <li>Player 2</li>
             <li>Player 3</li>
@@ -34,7 +33,6 @@
     <div class="gameArea">
     <div class="gameDisplay">
         Camera feed will be shown here.
-        {{ data }}
     </div>
         <div class="guessArea">
             <input class="guess"> <button>Guess</button></input>
@@ -49,24 +47,6 @@
                   </div>
     </div>
     </div>
-    {{ room_name|json_script:"room-name" }}
-    <script>
-        const roomName = JSON.parse(document.getElementById('room-name').textContent)
-        /*const socket = new WebSocket(
-            'ws://' +
-            window.location.host +
-            '/ws/home/' +
-            roomName +
-            '/'
-        );
-        console.log('successfully connected?');
-        socket.onmessage = function (e) {
-            const data = JSON.parse(e.data);
-            console.log(data);
-            document.querySelector('#user-hello').innerHTML = (data.message)
-        }
-        */
-    </script>
-    <script src="{% static '/js/game.js' %}" data-room-name="{{ room_name }}"></script>
+<script src="{% static '/js/game.js' %}"></script>
 </body>
 </html>

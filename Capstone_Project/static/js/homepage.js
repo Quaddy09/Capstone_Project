@@ -10,7 +10,7 @@ function getInRoom() {
         }
     else {
         // window.location.href = window.location.href+ "" +room_name.value;
-        window.location.pathname = '/home/' + roomName + '/';
+        window.location.pathname = '/home/' + room_name.value + '/';
     }
 }
 
