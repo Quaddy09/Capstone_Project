@@ -1,9 +1,9 @@
-//const room_name = document.currentScript.getAttribute('data-room-name');
-//const room_name = JSON.parse(document.getElementById('room-name').textContent)
-const room_name = document.getElementById("name")
+var room_name = document.getElementById("name").innerHTML;
+room_name = room_name.trimStart();
 
 // Create a new WebSocket instance
 const socket = new WebSocket('ws://' + window.location.host + '/ws/home/' + room_name + '/');
+console.log(socket)
 
 socket.onmessage = function (e) {
   const data = JSON.parse(e.data);

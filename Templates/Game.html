@@ -23,29 +23,27 @@
     <div class="game">
         <div class="playerList">
         <ul>
-            <h3 id="name"> {{ room_name }}</h3>
+            <h3 id="name"> {{room_name}}</h3>
             <li>Player 1</li>
             <li>Player 2</li>
             <li>Player 3</li>
             <li>Player 4</li>
         </ul>
-    </div>
-    <div class="gameArea">
-    <div class="gameDisplay">
-        Camera feed will be shown here.
-    </div>
-        <div class="guessArea">
+        </div>
+        <div class="gameArea">
+            <div class="gameDisplay">Camera feed will be shown here.</div>
+            <div class="guessArea">
             <input class="guess"> <button>Guess</button></input>
+                </div>
         </div>
-    </div>
-          <div class="chatArea">
-        <div class="chat">
-            <div class="chatHeader">Chat</div>
+        <div class="chatArea">
+            <div class="chat">
+                <div class="chatHeader">Chat</div>
+            </div>
+            <div class="sendChatArea">
+                <input class="send"> <button>Send</button></input>
+            </div>
         </div>
-              <div class="sendChatArea">
-         <input class="send"> <button>Send</button></input>
-                  </div>
-    </div>
     </div>
 <script src="{% static '/js/game.js' %}"></script>
 </body>
