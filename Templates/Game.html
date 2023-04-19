@@ -4,10 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Game</title>
+    <!-- BootStrap Link-->
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}"  type="text/css"/>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <!-- Stylesheet links-->
     <link rel="stylesheet" href="{% static 'css/HomeStyle.css' %}"  type="text/css"/>
     <link rel="stylesheet" href="{% static 'css/GameStyle.css' %}" type="text/css"/>
-    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <!-- p5.js links-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.js"></script>
+    <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/addons/p5.dom.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/addons/p5.sound.min.js"></script>
+
+    <!-- Handsfree style framework links-->
+    <link rel="stylesheet" href="https://unpkg.com/handsfree@8.4.2/build/lib/assets/handsfree.css" />
+    <script src="https://unpkg.com/handsfree@8.4.2/build/lib/handsfree.js"></script>
+
+
 </head>
 <body>
     <article class="index-intro">
@@ -23,18 +37,18 @@
     <div class="game">
         <div class="playerList">
         <ul>
-            <h3 id="name"> {{room_name}}</h3>
+            <h3 id="name">{{room_name}}</h3>
             <li>Player 1</li>
             <li>Player 2</li>
             <li>Player 3</li>
             <li>Player 4</li>
         </ul>
         </div>
-        <div class="gameArea">
-            <div class="gameDisplay">Camera feed will be shown here.</div>
-            <div class="guessArea">
-            <input class="guess"> <button>Guess</button></input>
-                </div>
+        <div class="gameDisplay" id="gameDisplay">
+            <!-- canvas goes here -->
+        </div>
+        <div class="camDisplay" id="camDisplay">
+            <!-- users cam goes here -->
         </div>
         <div class="chatArea">
             <div class="chat">
@@ -45,9 +59,11 @@
                     <input id="chat-message-submit" type="button" value="Send">
                 </div>
             </div>
-
         </div>
     </div>
+
+<!-- project javascript links -->
+<script src="{% static '/js/sketch.js' %}"></script>
 <script src="{% static '/js/game.js' %}"></script>
 </body>
 </html>

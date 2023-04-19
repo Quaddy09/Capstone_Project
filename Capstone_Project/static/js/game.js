@@ -3,7 +3,6 @@ room_name = room_name.trimStart();
 
 // Create a new WebSocket instance
 const socket = new WebSocket('ws://' + window.location.host + '/ws/home/' + room_name + '/');
-console.log(socket)
 
 socket.onmessage = function (e) {
   const data = JSON.parse(e.data);
