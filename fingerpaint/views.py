@@ -67,7 +67,9 @@ class Homepage(View):
 
 def Game(request, room_name):
     # my_user = myUser.get_user(request.session["session_username"])
-    return render(request, 'Game.html', {'room_name': room_name})
+    return render(request, 'Game.html', {
+        'room_name': room_name
+    })
 
 
 class VideoCamera(object):
@@ -90,6 +92,7 @@ class VideoCamera(object):
         # video stream.
         ret, jpeg = cv2.imencode('.jpg', image)
         return jpeg.tobytes()
+
 
 def gen(camera):
     while True:

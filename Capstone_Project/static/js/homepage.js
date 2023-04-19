@@ -9,8 +9,9 @@ function getInRoom() {
             alert("Error. Please use  underscore and alphanumeric only ! ");
         }
     else {
-        //window.location.href = window.location.href+ "" +room_name.value;
-        alert('made it')
+        //console.log(window.location.href);
+        window.location.href = window.location.href+ "" +room_name.value;
+        //window.location.href = 'ws://' + window.location.host + '/home/'+ room_name.value + '/'
         var test = window.location.host+ "/ws/home/" +room_name.value +'/';
         console.log(test);
     }
@@ -40,7 +41,7 @@ create_room_btn.addEventListener('click',async function(){
         console.log(error);
     }
 })
-/* Adds click listener to join_room button*/
+/* Adds click listener to join_room button */
 join_room_btn.addEventListener('click',getInRoom);
 
 /*

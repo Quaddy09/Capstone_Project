@@ -1,8 +1,14 @@
 var roomName = document.currentScript.getAttribute('data-room-name');
 console.log(roomName);
 // Create a new WebSocket instance
-const socket = new WebSocket('ws://' + window.location.host + '/ws/home/'+ roomName + '/');
+const socket = new WebSocket('ws://' + window.location.host + '/ws/home/' + roomName + '/');
 
+
+socket.onmessage = function (e) {
+  const data = JSON.parse(e.data);
+  console.log(data);
+}
+/*
 // Add an event listener for when the WebSocket connection is opened
 socket.addEventListener('open', (event) => {
   // Send a message to the server
@@ -25,3 +31,4 @@ socket.addEventListener('message', (event) => {
 socket.addEventListener('close', (event) => {
   // Handle WebSocket close event
 });
+*/

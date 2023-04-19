@@ -14,21 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 # from fingerpaint.views import Login, Homepage, Game, PasswordChange
 from fingerpaint import views, routing, consumers
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.Login.as_view()),
-    path('password/', views.PasswordChange.as_view()),
-    path('createuser/', views.CreateUser.as_view()),
-    path('home/', views.Homepage.as_view()),
-    path('home/<str:room_name>/', views.Game, name="game")
-]
-
-routing.websocket_urlpatterns = [
-    path('ws://127.0.0.1:8000/ws/home/<str:room_name>', consumers.GameConsumer.as_asgi())
+    path('', include('fingerpaint.urls')),
 ]
 
 """

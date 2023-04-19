@@ -31,18 +31,18 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # 'fingerpaint.apps.FingerpaintConfig',
+    'fingerpaint',
+    'channels',
+    'daphne',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'fingerpaint.apps.FingerpaintConfig',
-    'channels'
-]
 
-CHANNEL_LAYER = 'channels.layers.DefaultBackend'  # Set the backend for Django Channels
-CHANNEL_BACKEND = 'asgiref.inmemory.ChannelLayer'  # Set the channel layer backend
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -74,9 +74,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'Capstone_Project.wsgi.application'
-ASGI_APPLICATION = 'Capstone_Project.asgi.application'
-
-
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
@@ -132,3 +129,13 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+ASGI_APPLICATION = "Capstone_Project.asgi.application"
+CHANNEL_LAYER = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": ['127.0.0.1', '6379'],
+        },
+    },
+}
