@@ -39,10 +39,13 @@
         <div class="chatArea">
             <div class="chat">
                 <div class="chatHeader">Chat</div>
+                <textarea id="chat-log" cols="50" rows="50"></textarea><br>
+                <div class="sendChatArea">
+                    <input id="chat-message-input" type="text" size="42"><br>
+                    <input id="chat-message-submit" type="button" value="Send">
+                </div>
             </div>
-            <div class="sendChatArea">
-                <input class="send"> <button>Send</button></input>
-            </div>
+
         </div>
     </div>
 <script src="{% static '/js/game.js' %}"></script>
