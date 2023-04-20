@@ -10,9 +10,9 @@ class User(models.Model):
         return self.username
 
 
-class Lobby(models.Model):
-    lobby_name = models.CharField(max_length=50)
-    players = models.ManyToManyField(User)
+class Room(models.Model):
+    room_name = models.CharField(max_length=60)
+    players = models.JSONField(default=list)
 
     def __str__(self) -> str:
-        return self.lobby_name
+        return self.room_name
