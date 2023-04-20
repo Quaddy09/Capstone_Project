@@ -14,7 +14,6 @@
 
     <!-- p5.js links-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.js"></script>
-    <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/addons/p5.dom.js"></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/addons/p5.sound.min.js"></script>
 
     <!-- Handsfree style framework links-->
@@ -33,7 +32,7 @@
     </div>
     </article>
 
-
+    <h2 class="guess-word" id="guess-word"></h2>
     <div class="game">
         <div class="player-div">
             <h3 id="name">{{room_name}}</h3>
@@ -43,6 +42,7 @@
         <div class="gameDisplay" id="gameDisplay">
             <!-- canvas goes here -->
         </div>
+
         <div class="chatArea">
             <div class="chat">
                 <div class="chatHeader"><h3>Chat</h3></div>
@@ -56,6 +56,7 @@
     </div>
     <input id="start-game" type="button" value="Start Game"/>
 <!-- project javascript links -->
+<!--<script id="draw-script"></script>-->
 <script src="{% static '/js/sketch.js' %}"></script>
 <script src="{% static '/js/game.js' %}"></script>
 </body>

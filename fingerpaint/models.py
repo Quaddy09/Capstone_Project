@@ -13,6 +13,7 @@ class User(models.Model):
 class Room(models.Model):
     room_name = models.CharField(max_length=60)
     players = models.JSONField(default=list)
+    chosen_player = models.CharField(max_length=25, default='')
 
     def __str__(self) -> str:
         return self.room_name

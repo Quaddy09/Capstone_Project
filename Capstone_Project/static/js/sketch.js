@@ -43,6 +43,7 @@ function setup () {
 
   // Add webcam buttons under the canvas
   buttonStart = createButton('Start Webcam');
+  buttonStart.id('start-webcam');
   buttonStart.class('handsfree-show-when-stopped');
   buttonStart.class('handsfree-hide-when-loading');
   buttonStart.mousePressed(() => handsfree.start());
@@ -55,6 +56,7 @@ function setup () {
 
   // Create a stop button
   buttonStop = createButton('Stop Webcam');
+  buttonStart.id('stop-webcam');
   buttonStop.class('handsfree-show-when-started');
   buttonStop.mousePressed(() => handsfree.stop());
   buttonStop.parent('gameDisplay');

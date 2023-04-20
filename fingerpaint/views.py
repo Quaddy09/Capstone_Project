@@ -62,7 +62,6 @@ class CreateUser(View):
 
 
 def home(request):
-    print(request.session["session_username"])
     return render(request, 'Home.html', {})
 
 

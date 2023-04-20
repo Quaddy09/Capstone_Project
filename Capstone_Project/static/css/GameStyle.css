@@ -3,7 +3,9 @@
 }
 .index-intro .jumbotron {
     padding: 0;
-}
+}.guess-word {
+    padding: 30px;
+ }
 .game{
     height: 400px;
     display:flex;
@@ -48,6 +50,7 @@
     vertical-align: middle;
     display: inline-block;
 }
+
 .guessArea, .sendChatArea{
     display: flex;
 }

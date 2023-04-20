@@ -1,5 +1,6 @@
 import asyncio
 import json
+import random
 
 from channels.generic.websocket import AsyncWebsocketConsumer
 from channels.db import database_sync_to_async
@@ -81,6 +82,9 @@ class GameConsumer(AsyncWebsocketConsumer):
                     'type': 'send_player_list',
                     'players': room.players
                 })
+        elif command == 'start_game':
+            await self.choose_player_to_draw()
+            await self.send_chosen_player()
         elif command == 'new_message':
             # get message data
             message = data['message']
@@ -89,7 +93,7 @@ class GameConsumer(AsyncWebsocketConsumer):
                 self.room_group_name,
                 {
                     "type": "chat_message",
-                    "message": message
+                    "message": message,
                 }
             )
         else:
@@ -119,13 +123,40 @@ class GameConsumer(AsyncWebsocketConsumer):
             }
         )
 
+    @sync_to_async()
+    def choose_player_to_draw(self):
+        try:
+            room = Room.objects.get(room_name=self.room_name)
+            players = room.players
+            num_players = len(players)
+            if num_players > 0:
+                # Choose a random player to draw
+                chosen_player = random.choice(players)
+                room.chosen_player = chosen_player
+                room.save()
+        except Room.DoesNotExist:
+            pass
+
+    async def send_chosen_player(self):
+        try:
+            room = await self.get_room(self.room_name)
+            chosen_player = room.chosen_player
+            await self.send(text_data=json.dumps({
+                'command': 'start_game',
+                'chosen_player': chosen_player,
+                'current_user': self.scope['session']['session_username'],
+            }))
+        except Room.DoesNotExist:
+            pass
+
     async def chat_message(self, event):
         message = event['message']
 
         # send message to websocket
         await self.send(text_data=json.dumps({
             'command': 'message',
-            'message': message
+            'message': message,
+            "user": self.scope['session']['session_username'],
         }))
 
     @database_sync_to_async
@@ -135,13 +166,9 @@ class GameConsumer(AsyncWebsocketConsumer):
     @database_sync_to_async
     def add_player(self, user, name):
         room = Room.objects.get(room_name=name)
-        print('in add_user = ' + user)
-        print(room.players)
         if user not in room.players:
             room.players.append(user)
-            print(room.players)
             room.save()
-            print('added ' + user)
 
     @database_sync_to_async
     def remove_player(self, username, room):
