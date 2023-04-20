@@ -35,15 +35,11 @@
 
 
     <div class="game">
-        <div class="playerList">
-        <ul>
+        <div class="player-div">
             <h3 id="name">{{room_name}}</h3>
-            <li>Player 1</li>
-            <li>Player 2</li>
-            <li>Player 3</li>
-            <li>Player 4</li>
-        </ul>
+            <ul id="player-list"></ul>
         </div>
+
         <div class="gameDisplay" id="gameDisplay">
             <!-- canvas goes here -->
         </div>
@@ -58,7 +54,7 @@
             </div>
         </div>
     </div>
-
+    <input id="start-game" type="button" value="Start Game"/>
 <!-- project javascript links -->
 <script src="{% static '/js/sketch.js' %}"></script>
 <script src="{% static '/js/game.js' %}"></script>

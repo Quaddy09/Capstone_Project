@@ -62,19 +62,19 @@ class CreateUser(View):
 
 
 def home(request):
+    print(request.session["session_username"])
     return render(request, 'Home.html', {})
 
 
 def Game(request, room_name):
     # my_user = myUser.get_user(request.session["session_username"])
     return render(request, 'Game.html', {
-        'room_name': room_name
+        'room_name': room_name,
     })
 
 
 @csrf_exempt
 def roomExist(request, room_name):
-    print(room_name)
     response = True
     try:
         Room.objects.get(room_name=room_name)

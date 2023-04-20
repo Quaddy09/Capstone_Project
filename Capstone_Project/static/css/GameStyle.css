@@ -9,13 +9,22 @@
     display:flex;
 }
 
-.playerList{
+.player-div{
+    width: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-.playerList ul{
     background-color: white;
+    border: solid black 1px;
+    border-radius: 4px;
+}
+
+.player-div h3 {
+
+}
+
+
+.player-div ul{
     display: inline-block;
     padding: 0;
     border: solid black 1px;
@@ -23,7 +32,7 @@
     list-style: none;
 }
 
-.playerList ul li {
+.player-div ul li {
     border-bottom: solid black 1px;
     padding: 10px;
 }
