@@ -9,7 +9,6 @@ function getInRoom() {
             alert("Error. Please use  underscore and alphanumeric only ! ");
         }
     else {
-        // window.location.href = window.location.href+ "" +room_name.value;
         window.location.pathname = '/home/' + room_name.value + '/';
     }
 }
@@ -19,20 +18,18 @@ function getInRoom() {
 *  calls function getInRoom() */
 create_room_btn.addEventListener('click',async function(){
     try {
-        getInRoom();
-        /*
         const check_url = window.location.host;
-        const res = await fetch(`${check_url}/room/check_room/${room_name.value}/`,{
+        console.log(check_url);
+        const res = await fetch(`/home/check_room/${room_name.value}/`,{
             method:'GET',
-        })
+        });
         const r = await res.json();
-        //if(r.room_exist){
-        //    Swal.fire("Room Name Taken", "Please choose other or join this room ! ", "error");
-        //}
-        //else{
-
-        //}
-        */
+        if(r.room_exist){
+            alert("Room Name Taken");
+        }
+        else{
+            getInRoom();
+        }
     } catch (error) {
         console.log(error);
     }

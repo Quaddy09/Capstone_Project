@@ -1,10 +1,12 @@
+import cv2
+
 from django.shortcuts import render, redirect
 from django.views import View
-from .models import User
+from django.views.decorators.csrf import csrf_exempt
+from .models import Room
 from classes import myUser
-from django.http.response import StreamingHttpResponse
-from django.http import HttpResponse
-import cv2
+from django.http import JsonResponse
+
 
 
 class Login(View):
@@ -67,4 +69,18 @@ def Game(request, room_name):
     # my_user = myUser.get_user(request.session["session_username"])
     return render(request, 'Game.html', {
         'room_name': room_name
+    })
+
+
+@csrf_exempt
+def roomExist(request, room_name):
+    print(room_name)
+    response = True
+    try:
+        Room.objects.get(room_name=room_name)
+    except Room.DoesNotExist:
+        response = False
+
+    return JsonResponse({
+        "room_exist": response
     })
