@@ -30,19 +30,32 @@ socket.onmessage = function (e) {
       updatePlayerList(data['players']);
       break;
     case 'start_game':
+      // disable start game button
       let s_button = document.getElementById('start-game');
       s_button.disabled = true;
 
+      // set the chosen player to draw and the current user
       const chosenPlayer = data['chosen_player'];
       let current_user = data['current_user'];
+
+      // if the current user is the chosen one, let them draw
       if (chosenPlayer === current_user) {
+
+        // give them a word to draw
         let randomIndex = Math.floor(Math.random() * draw_word_list.length);
         correct_word = draw_word_list[randomIndex];
+        // display it
         document.getElementById('guess-word').innerHTML = correct_word;
+
+        // need to stream sketch.js data through websocket
+        let stop_b = document.getElementById('stop-webcam');
+        stop_b.addEventListener('click', function() {
+          console.log('Button clicked');
+          // Add your code here
+}       );
       }
       else {
-        let s_button = document.getElementById('start-webcam');
-        s_button.disabled = true;
+        // if you are not drawing, cant interact with webcam buttons
         let stop_b = document.getElementById('stop-webcam');
         stop_b.disabled = true;
       }
